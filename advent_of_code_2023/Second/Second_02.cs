@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace advent_of_code_2023.Second
 {
-    public class Second_01
+    public class Second_02
     {
-        public Second_01()
+        public Second_02()
         {
-            Console.WriteLine("2-1");
+            Console.WriteLine("2-2");
 
             string[] allLines = File.ReadAllLines("C:\\Users\\VETLE\\git\\advent_of_code_2023\\advent_of_code_2023\\Second\\input.txt");
 
@@ -19,12 +19,16 @@ namespace advent_of_code_2023.Second
 
             foreach (string line in allLines)
             {
+                long gamePower = 0;
+
+                int lowestRed = 0;
+                int lowestGreen = 0;
+                int lowestBlue = 0;
+
                 string[] games = line.Split(":".ToCharArray());
                 string[] game = games[0].Split(" ".ToCharArray());
                 int gameNumber = int.Parse(game[1]);
                 string[] rounds = games[1].Split(";".ToCharArray());
-
-                bool shouldAddNumber = true;
 
                 foreach (string round in rounds)
                 {
@@ -35,33 +39,32 @@ namespace advent_of_code_2023.Second
 
                         if (values[1].Contains("red"))
                         {
-                            if (int.Parse(values[0]) > 12)
+                            if (int.Parse(values[0]) > lowestRed)
                             {
-                                shouldAddNumber = false;
+                                lowestRed = int.Parse(values[0]);
                             }
                         }
                         if (values[1].Contains("green"))
                         {
-                            if (int.Parse(values[0]) > 13)
+                            if (int.Parse(values[0]) > lowestGreen)
                             {
-                                shouldAddNumber = false;
+                                lowestGreen = int.Parse(values[0]);
                             }
                         }
                         if (values[1].Contains("blue"))
                         {
-                            if (int.Parse(values[0]) > 14)
+                            if (int.Parse(values[0]) > lowestBlue)
                             {
-                                shouldAddNumber = false;
+                                lowestBlue = int.Parse(values[0]);
                             }
                         }
                     }
                 }
-                if (shouldAddNumber)
-                {
-                    total += gameNumber;
-                }
+                gamePower = lowestRed * lowestGreen * lowestBlue;
+                total += gamePower;
             }
             Console.WriteLine(total);
         }
     }
 }
+
