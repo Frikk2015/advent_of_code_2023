@@ -14,7 +14,6 @@ namespace advent_of_code_2023
             Console.WriteLine("Main script");
 
             new First_1();
-            new First_2();
         }
     }
 }
