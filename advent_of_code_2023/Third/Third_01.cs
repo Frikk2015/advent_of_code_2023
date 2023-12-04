@@ -14,17 +14,20 @@ namespace advent_of_code_2023.Third
         {
             Console.WriteLine("3-1");
 
-            string[] allLines = File.ReadAllLines("C:\\Users\\vetlefon\\git\\advent_of_code_2023\\advent_of_code_2023\\Third\\input.txt");
+            string[] allLines = File.ReadAllLines(".\\input3.txt");
 
             long total = 0;
 
-            foreach (string line in allLines)
+            for (int line = 0; line < allLines.Length; line++)
             {
                 bool lastResult = false;
                 int wholeNumber = 0;
-                foreach (char value in line)
+
+                bool shouldBeAdded = false;
+
+                for (int value = 0; value < allLines[line].Length; value++)
                 {
-                    if (int.TryParse(value.ToString(), out int result))
+                    if (int.TryParse(allLines[line][value].ToString(), out int result))
                     {
                         if (lastResult)
                         {
@@ -35,15 +38,52 @@ namespace advent_of_code_2023.Third
                             wholeNumber = result;
                         }
 
+                        for (int j = 1; j <= 3; j++)
+                        {
+                            for (int i = 1; i <= 3; i++)
+                            {
+                                if (allLines[Clamp(line + (- 2 + j), 0, allLines.Length - 1)][Clamp(value + (- 2 + i), 0, allLines[line].Length - 1)] != ".".ToCharArray()[0] && !(char.IsNumber(allLines[Clamp(line + (- 2 + j), 0, allLines.Length - 1)][Clamp(value + (- 2 + i), 0, allLines[line].Length - 1)])))
+                                {
+                                    shouldBeAdded = true;
+                                }
+                            }
+                        }
+
                         lastResult = true;
-                        Console.WriteLine(wholeNumber);
                     }
                     else
                     {
+
+                        if (!(wholeNumber == 0))
+                        {
+                            if (shouldBeAdded)
+                            {
+                                total += wholeNumber;
+                                Console.WriteLine(wholeNumber);
+                            }
+                            wholeNumber = 0;
+                        }
+                        shouldBeAdded = false;
                         lastResult = false;
                     }
                 }
+                if (!(wholeNumber == 0))
+                {
+                    if (shouldBeAdded)
+                    {
+                        total += wholeNumber;
+                        Console.WriteLine(wholeNumber);
+                    }
+                }
             }
+            Console.WriteLine(total);
+        }
+
+        public static int Clamp(int val, int min, int max)
+        {
+            if (val < min) return min;
+            else if (val > max) return max;
+            else return val;
         }
     }
 }

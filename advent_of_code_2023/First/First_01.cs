@@ -14,7 +14,7 @@ namespace advent_of_code_2023.First
         {
             Console.WriteLine("1-1");
 
-            string[] lines = File.ReadAllLines("C:\\Users\\vetlefon\\git\\advent_of_code_2023\\advent_of_code_2023\\First\\input.txt");
+            string[] lines = File.ReadAllLines(".\\input1.txt");
 
             int _number = 0;
 

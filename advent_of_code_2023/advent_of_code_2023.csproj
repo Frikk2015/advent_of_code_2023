@@ -54,9 +54,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="First\input.txt" />
-    <Content Include="Second\input.txt" />
-    <Content Include="Third\input.txt" />
+    <Content Include="bin\Debug\input1.txt" />
+    <Content Include="bin\Debug\input2.txt" />
+    <Content Include="bin\Debug\input3.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
