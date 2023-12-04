@@ -1,5 +1,6 @@
 ﻿using advent_of_code_2023.First;
 using advent_of_code_2023.Second;
+using advent_of_code_2023.Third;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,8 @@ namespace advent_of_code_2023
 
             new Second_01();
             new Second_02();
+
+            new Third_01();
         }
     }
 }

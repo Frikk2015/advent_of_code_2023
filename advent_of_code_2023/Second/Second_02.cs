@@ -13,7 +13,7 @@ namespace advent_of_code_2023.Second
         {
             Console.WriteLine("2-2");
 
-            string[] allLines = File.ReadAllLines("C:\\Users\\VETLE\\git\\advent_of_code_2023\\advent_of_code_2023\\Second\\input.txt");
+            string[] allLines = File.ReadAllLines("C:\\Users\\vetlefon\\git\\advent_of_code_2023\\advent_of_code_2023\\Second\\input.txt");
 
             long total = 0;
 
