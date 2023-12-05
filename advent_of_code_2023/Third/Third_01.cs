@@ -59,7 +59,6 @@ namespace advent_of_code_2023.Third
                             if (shouldBeAdded)
                             {
                                 total += wholeNumber;
-                                Console.WriteLine(wholeNumber);
                             }
                             wholeNumber = 0;
                         }
@@ -72,7 +71,6 @@ namespace advent_of_code_2023.Third
                     if (shouldBeAdded)
                     {
                         total += wholeNumber;
-                        Console.WriteLine(wholeNumber);
                     }
                 }
             }

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fifth\Fifth_01.cs" />
     <Compile Include="First\First_01.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +58,7 @@
     <Content Include="bin\Debug\input1.txt" />
     <Content Include="bin\Debug\input2.txt" />
     <Content Include="bin\Debug\input3.txt" />
+    <Content Include="bin\Debug\input5.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
