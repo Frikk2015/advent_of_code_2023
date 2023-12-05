@@ -29,18 +29,17 @@ namespace advent_of_code_2023.Fourth
 
                 int correctValues = 0;
 
-                for (int i = 0; i < yourValues.Length; i++)
+                foreach (string yourValue in yourValues)
                 {
-                    if (yourValues[i] == null) continue;
-                    for (int j = 0; j < winningValues.Length; j++)
+                    if (yourValue == "") continue;
+                    foreach (string winningValue in winningValues)
                     {
-                        if (winningValues[j] == "") continue;
-                        if (yourValues[i] == winningValues[j]) { correctValues++; Console.WriteLine(yourValues[i]); Console.WriteLine(winningValues[j]); };
+                        if (winningValue == "") continue;
+                        if (yourValue == winningValue) correctValues++;
                     }
                 }
 
                 if (correctValues == 0) continue;
-                Console.WriteLine(correctValues);
                 total += (long)Math.Pow(2, correctValues - 1);
             }
             Console.WriteLine(total);
