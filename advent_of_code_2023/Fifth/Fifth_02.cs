@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace advent_of_code_2023.Fifth
 {
-    public class Fifth_01
+    public class Fifth_02
     {
-        public Fifth_01() 
+        public Fifth_02()
         {
             Console.WriteLine("5-1");
 
@@ -92,9 +92,10 @@ namespace advent_of_code_2023.Fifth
                 }
             }
             List<long> allLocations = new List<long>();
-            foreach(string seed in seeds)
+            for (int seedValues = 0; seedValues < seeds.Length; seedValues += 2)
             {
-                long number = long.Parse(seed);
+                for (int seed = 0; seed < int.Parse(seeds[seedValues + 1]); seed++)
+                long number = long.Parse(seeds[seed]);
                 for (long i = 0; i < soilMap.Length; i += 3)
                 {
                     if (number <= long.Parse(soilMap[i + 1]) + long.Parse(soilMap[i + 2]) - 1 && number >= long.Parse(soilMap[i + 1]))

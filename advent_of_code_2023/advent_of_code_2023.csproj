@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Fifth\Fifth_01.cs" />
+    <Compile Include="Fifth\Fifth_02.cs" />
     <Compile Include="First\First_01.cs" />
     <Compile Include="Fourth\Fourth_01.cs" />
     <Compile Include="Program.cs" />
