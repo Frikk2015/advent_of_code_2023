@@ -3,6 +3,7 @@ using advent_of_code_2023.Second;
 using advent_of_code_2023.Third;
 using advent_of_code_2023.Fourth;
 using advent_of_code_2023.Fifth;
+using advent_of_code_2023.Seventh;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,11 @@ namespace advent_of_code_2023
             new Fourth_01();
 
             new Fifth_01();
-            new Fifth_02();
+            //new Fifth_02();
+
+
+
+            new Seventh_01();
         }
     }
 }
