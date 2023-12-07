@@ -54,6 +54,7 @@
     <Compile Include="Seventh\HandValues.cs" />
     <Compile Include="Seventh\Seventh_01.cs" />
     <Compile Include="Sixth\Sixth_01.cs" />
+    <Compile Include="Sixth\Sixth_02.cs" />
     <Compile Include="Third\Third_01.cs" />
   </ItemGroup>
   <ItemGroup>
