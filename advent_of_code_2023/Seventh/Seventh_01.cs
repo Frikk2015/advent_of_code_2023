@@ -51,14 +51,12 @@ namespace advent_of_code_2023.Seventh
                     {
                         fiveOfAKind.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
                         canBeHighCard = false;
-                        Console.WriteLine("Five of a kind");
                         break;
                     }
                     else if (matchingHand.Equals(4))
                     {
                         fourOfAKind.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
                         canBeHighCard = false;
-                        Console.WriteLine("Four of a kind");
                         break;
                     }
                     else if (matchingHand.Equals(3))
@@ -101,36 +99,24 @@ namespace advent_of_code_2023.Seventh
                 if (canBeOnePair)
                 {
                     onePair.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("One pair");
                 }
                 else if (canBeThreeOfAKind)
                 {
                     threeOfAKind.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("Three of a kind");
                 }
                 else if (canThreeBeFullHouse || canTwoBeFullHouse)
                 {
                     fullHouse.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("Full house");
                 }
                 else if (canBeTwoPairs)
                 {
                     twoPairs.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("Two pairs");
                 }
                 else if (canBeHighCard)
                 {
                     highCard.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("High card");
                 }
             }
-            Console.WriteLine("High card: " + highCard[0]._cards.Count() / 5);
-            Console.WriteLine("Two pairs: " + twoPairs.Count() / 5);
-            Console.WriteLine("Three of a kind: " + threeOfAKind.Count() / 5);
-            Console.WriteLine("Full house: " + fullHouse.Count() / 5);
-            Console.WriteLine("Four of a kind: " + fourOfAKind.Count() / 5);
-            Console.WriteLine("Five of a kind: " + fiveOfAKind.Count() / 5);
-
             for (int i = 0; i < fiveOfAKind.Count(); i+= 5)
             {
 

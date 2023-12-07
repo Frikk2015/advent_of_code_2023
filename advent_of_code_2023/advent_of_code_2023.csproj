@@ -53,6 +53,7 @@
     <Compile Include="Second\Second_02.cs" />
     <Compile Include="Seventh\HandValues.cs" />
     <Compile Include="Seventh\Seventh_01.cs" />
+    <Compile Include="Sixth\Sixth_01.cs" />
     <Compile Include="Third\Third_01.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +65,7 @@
     <Content Include="bin\Debug\input3.txt" />
     <Content Include="bin\Debug\input4.txt" />
     <Content Include="bin\Debug\input5.txt" />
+    <Content Include="bin\Debug\input6.txt" />
     <Content Include="bin\Debug\input7.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
