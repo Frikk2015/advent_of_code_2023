@@ -11,7 +11,7 @@ namespace advent_of_code_2023.Fifth
     {
         public Fifth_02()
         {
-            Console.WriteLine("5-1");
+            Console.WriteLine("5-2");
 
             string[] allLines = File.ReadAllLines(".\\input5.txt");
 
@@ -92,67 +92,69 @@ namespace advent_of_code_2023.Fifth
                 }
             }
             List<long> allLocations = new List<long>();
-            for (int seedValues = 0; seedValues < seeds.Length; seedValues += 2)
+            for (long seedValues = 0; seedValues < seeds.Length; seedValues += 2)
             {
-                for (int seed = 0; seed < int.Parse(seeds[seedValues + 1]); seed++)
-                long number = long.Parse(seeds[seed]);
-                for (long i = 0; i < soilMap.Length; i += 3)
+                for (long seed = long.Parse(seeds[seedValues]); seed < long.Parse(seeds[seedValues]) + long.Parse(seeds[seedValues + 1]) - 1; seed++)
                 {
-                    if (number <= long.Parse(soilMap[i + 1]) + long.Parse(soilMap[i + 2]) - 1 && number >= long.Parse(soilMap[i + 1]))
+                    long number = seed;
+                    for (long i = 0; i < soilMap.Length; i += 3)
                     {
-                        number += (long.Parse(soilMap[i]) - long.Parse(soilMap[i + 1]));
-                        break;
+                        if (number <= long.Parse(soilMap[i + 1]) + long.Parse(soilMap[i + 2]) - 1 && number >= long.Parse(soilMap[i + 1]))
+                        {
+                            number += (long.Parse(soilMap[i]) - long.Parse(soilMap[i + 1]));
+                            break;
+                        }
                     }
-                }
-                for (long i = 0; i < fertilizerMap.Length; i += 3)
-                {
-                    if (number <= long.Parse(fertilizerMap[i + 1]) + long.Parse(fertilizerMap[i + 2]) - 1 && number >= long.Parse(fertilizerMap[i + 1]))
+                    for (long i = 0; i < fertilizerMap.Length; i += 3)
                     {
-                        number += (long.Parse(fertilizerMap[i]) - long.Parse(fertilizerMap[i + 1]));
-                        break;
+                        if (number <= long.Parse(fertilizerMap[i + 1]) + long.Parse(fertilizerMap[i + 2]) - 1 && number >= long.Parse(fertilizerMap[i + 1]))
+                        {
+                            number += (long.Parse(fertilizerMap[i]) - long.Parse(fertilizerMap[i + 1]));
+                            break;
+                        }
                     }
-                }
-                for (long i = 0; i < waterMap.Length; i += 3)
-                {
-                    if (number <= long.Parse(waterMap[i + 1]) + long.Parse(waterMap[i + 2]) - 1 && number >= long.Parse(waterMap[i + 1]))
+                    for (long i = 0; i < waterMap.Length; i += 3)
                     {
-                        number += (long.Parse(waterMap[i]) - long.Parse(waterMap[i + 1]));
-                        break;
+                        if (number <= long.Parse(waterMap[i + 1]) + long.Parse(waterMap[i + 2]) - 1 && number >= long.Parse(waterMap[i + 1]))
+                        {
+                            number += (long.Parse(waterMap[i]) - long.Parse(waterMap[i + 1]));
+                            break;
+                        }
                     }
-                }
-                for (long i = 0; i < lightMap.Length; i += 3)
-                {
-                    if (number <= long.Parse(lightMap[i + 1]) + long.Parse(lightMap[i + 2]) - 1 && number >= long.Parse(lightMap[i + 1]))
+                    for (long i = 0; i < lightMap.Length; i += 3)
                     {
-                        number += (long.Parse(lightMap[i]) - long.Parse(lightMap[i + 1]));
-                        break;
+                        if (number <= long.Parse(lightMap[i + 1]) + long.Parse(lightMap[i + 2]) - 1 && number >= long.Parse(lightMap[i + 1]))
+                        {
+                            number += (long.Parse(lightMap[i]) - long.Parse(lightMap[i + 1]));
+                            break;
+                        }
                     }
-                }
-                for (long i = 0; i < temperatureMap.Length; i += 3)
-                {
-                    if (number <= long.Parse(temperatureMap[i + 1]) + long.Parse(temperatureMap[i + 2]) - 1 && number >= long.Parse(temperatureMap[i + 1]))
+                    for (long i = 0; i < temperatureMap.Length; i += 3)
                     {
-                        number += (long.Parse(temperatureMap[i]) - long.Parse(temperatureMap[i + 1]));
-                        break;
+                        if (number <= long.Parse(temperatureMap[i + 1]) + long.Parse(temperatureMap[i + 2]) - 1 && number >= long.Parse(temperatureMap[i + 1]))
+                        {
+                            number += (long.Parse(temperatureMap[i]) - long.Parse(temperatureMap[i + 1]));
+                            break;
+                        }
                     }
-                }
-                for (long i = 0; i < humidityMap.Length; i += 3)
-                {
-                    if (number <= long.Parse(humidityMap[i + 1]) + long.Parse(humidityMap[i + 2]) - 1 && number >= long.Parse(humidityMap[i + 1]))
+                    for (long i = 0; i < humidityMap.Length; i += 3)
                     {
-                        number += (long.Parse(humidityMap[i]) - long.Parse(humidityMap[i + 1]));
-                        break;
+                        if (number <= long.Parse(humidityMap[i + 1]) + long.Parse(humidityMap[i + 2]) - 1 && number >= long.Parse(humidityMap[i + 1]))
+                        {
+                            number += (long.Parse(humidityMap[i]) - long.Parse(humidityMap[i + 1]));
+                            break;
+                        }
                     }
-                }
-                for (long i = 0; i < locationMap.Length; i += 3)
-                {
-                    if (number <= long.Parse(locationMap[i + 1]) + long.Parse(locationMap[i + 2]) - 1 && number >= long.Parse(locationMap[i + 1]))
+                    for (long i = 0; i < locationMap.Length; i += 3)
                     {
-                        number += (long.Parse(locationMap[i]) - long.Parse(locationMap[i + 1]));
-                        break;
+                        if (number <= long.Parse(locationMap[i + 1]) + long.Parse(locationMap[i + 2]) - 1 && number >= long.Parse(locationMap[i + 1]))
+                        {
+                            number += (long.Parse(locationMap[i]) - long.Parse(locationMap[i + 1]));
+                            break;
+                        }
                     }
+                    allLocations.Add(number);
                 }
-                allLocations.Add(number);
             }
             Console.WriteLine(allLocations.Min());
         }

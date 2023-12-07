@@ -27,6 +27,7 @@ namespace advent_of_code_2023
             new Fourth_01();
 
             new Fifth_01();
+            new Fifth_02();
         }
     }
 }
