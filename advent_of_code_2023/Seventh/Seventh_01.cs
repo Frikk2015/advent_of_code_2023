@@ -15,7 +15,7 @@ namespace advent_of_code_2023.Seventh
             string[] allLines = File.ReadAllLines("./input7.txt");
             long total = 0;
 
-            List<HandValues> handValues = new List<HandValues>();
+            List<RankBetValues> rankBetValues = new List<RankBetValues>();
 
             List<HandValues> fiveOfAKind = new List<HandValues>();
             List<HandValues> fourOfAKind = new List<HandValues>();
@@ -51,14 +51,12 @@ namespace advent_of_code_2023.Seventh
                     {
                         fiveOfAKind.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
                         canBeHighCard = false;
-                        Console.WriteLine("Five of a kind");
                         break;
                     }
                     else if (matchingHand.Equals(4))
                     {
                         fourOfAKind.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
                         canBeHighCard = false;
-                        Console.WriteLine("Four of a kind");
                         break;
                     }
                     else if (matchingHand.Equals(3))
@@ -101,40 +99,77 @@ namespace advent_of_code_2023.Seventh
                 if (canBeOnePair)
                 {
                     onePair.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("One pair");
                 }
                 else if (canBeThreeOfAKind)
                 {
                     threeOfAKind.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("Three of a kind");
                 }
                 else if (canThreeBeFullHouse || canTwoBeFullHouse)
                 {
                     fullHouse.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("Full house");
                 }
                 else if (canBeTwoPairs)
                 {
                     twoPairs.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("Two pairs");
                 }
                 else if (canBeHighCard)
                 {
                     highCard.Add(new HandValues(GetValue(values[0]), int.Parse(values[1])));
-                    Console.WriteLine("High card");
                 }
             }
-            Console.WriteLine("High card: " + highCard[0]._betValue);
-            Console.WriteLine("Two pairs: " + twoPairs[0]._betValue);
-            Console.WriteLine("Three of a kind: " + threeOfAKind[0]._betValue);
-            Console.WriteLine("Full house: " + fullHouse[0]._betValue);
-            Console.WriteLine("Four of a kind: " + fourOfAKind[0]._betValue);
-            Console.WriteLine("Five of a kind: " + fiveOfAKind[0]._betValue);
 
-            for (int i = 0; i < fiveOfAKind.Count(); i+= 5)
+            fiveOfAKind = fiveOfAKind.OrderBy(card => card._cards).ToList();
+            fourOfAKind = fourOfAKind.OrderBy(card => card._cards).ToList();
+            fullHouse = fullHouse.OrderBy(card => card._cards).ToList();
+            threeOfAKind = threeOfAKind.OrderBy(card => card._cards).ToList();
+            twoPairs = twoPairs.OrderBy(card => card._cards).ToList();
+            onePair = onePair.OrderBy(card => card._cards).ToList();
+            highCard = highCard.OrderBy(card => card._cards).ToList();
+
+            int previousRank = 1;
+
+            foreach (HandValues card in highCard)
             {
-
+                rankBetValues.Add(new RankBetValues(previousRank, card._betValue));
+                previousRank++;
             }
+            foreach (HandValues card in onePair)
+            {
+                rankBetValues.Add(new RankBetValues(previousRank, card._betValue));
+                previousRank++;
+            }
+            foreach (HandValues card in twoPairs)
+            {
+                rankBetValues.Add(new RankBetValues(previousRank, card._betValue));
+                previousRank++;
+            }
+            foreach (HandValues card in threeOfAKind)
+            {
+                rankBetValues.Add(new RankBetValues(previousRank, card._betValue));
+                previousRank++;
+            }
+            foreach (HandValues card in fullHouse)
+            {
+                rankBetValues.Add(new RankBetValues(previousRank, card._betValue));
+                previousRank++;
+            }
+            foreach (HandValues card in fourOfAKind)
+            {
+                rankBetValues.Add(new RankBetValues(previousRank, card._betValue));
+                previousRank++;
+            }
+            foreach (HandValues card in fiveOfAKind)
+            {
+                rankBetValues.Add(new RankBetValues(previousRank, card._betValue));
+                previousRank++;
+            }
+    
+            foreach (RankBetValues result in rankBetValues)
+            {
+                total += result._betValue * result._rank;
+            }
+
+            Console.WriteLine(total);
         }
         public List<int> GetValue(string cards)
         {
