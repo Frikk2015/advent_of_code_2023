@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using advent_of_code_2023.Eight;
 
 namespace advent_of_code_2023
 {
@@ -35,6 +36,8 @@ namespace advent_of_code_2023
             new Sixth_02();
 
             new Seventh_01();
+
+            new Eight_01();
         }
     }
 }
