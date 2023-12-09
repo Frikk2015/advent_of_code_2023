@@ -124,12 +124,12 @@ namespace advent_of_code_2023.Seventh
                     Console.WriteLine("High card");
                 }
             }
-            Console.WriteLine("High card: " + highCard[0]._cards.Count() / 5);
-            Console.WriteLine("Two pairs: " + twoPairs.Count() / 5);
-            Console.WriteLine("Three of a kind: " + threeOfAKind.Count() / 5);
-            Console.WriteLine("Full house: " + fullHouse.Count() / 5);
-            Console.WriteLine("Four of a kind: " + fourOfAKind.Count() / 5);
-            Console.WriteLine("Five of a kind: " + fiveOfAKind.Count() / 5);
+            Console.WriteLine("High card: " + highCard[0]._betValue);
+            Console.WriteLine("Two pairs: " + twoPairs[0]._betValue);
+            Console.WriteLine("Three of a kind: " + threeOfAKind[0]._betValue);
+            Console.WriteLine("Full house: " + fullHouse[0]._betValue);
+            Console.WriteLine("Four of a kind: " + fourOfAKind[0]._betValue);
+            Console.WriteLine("Five of a kind: " + fiveOfAKind[0]._betValue);
 
             for (int i = 0; i < fiveOfAKind.Count(); i+= 5)
             {
