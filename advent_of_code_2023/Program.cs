@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using advent_of_code_2023.Eight;
+using advent_of_code_2023.Nineteenth;
 
 namespace advent_of_code_2023
 {
@@ -37,7 +38,9 @@ namespace advent_of_code_2023
 
             new Seventh_01();
 
-            new Eight_01();
+            //new Eight_01();
+
+            new Nineteenth_01();
         }
     }
 }
