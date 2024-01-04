@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Eight\Eight_01.cs" />
+    <Compile Include="Fifteenth\Fifteenth_01.cs" />
+    <Compile Include="Fifteenth\Fifteenth_02.cs" />
+    <Compile Include="Fifteenth\Lens.cs" />
     <Compile Include="Fifth\Fifth_01.cs" />
     <Compile Include="Fifth\Fifth_02.cs" />
     <Compile Include="First\First_01.cs" />
@@ -67,6 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Debug\input1.txt" />
+    <Content Include="bin\Debug\input15.txt" />
     <Content Include="bin\Debug\input19.txt" />
     <Content Include="bin\Debug\input2.txt" />
     <Content Include="bin\Debug\input3.txt" />

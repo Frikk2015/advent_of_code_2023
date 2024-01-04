@@ -5,13 +5,14 @@ using advent_of_code_2023.Fourth;
 using advent_of_code_2023.Fifth;
 using advent_of_code_2023.Sixth;
 using advent_of_code_2023.Seventh;
+using advent_of_code_2023.Eight;
+using advent_of_code_2023.Fifteenth;
+using advent_of_code_2023.Nineteenth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using advent_of_code_2023.Eight;
-using advent_of_code_2023.Nineteenth;
 
 namespace advent_of_code_2023
 {
@@ -39,6 +40,9 @@ namespace advent_of_code_2023
             new Seventh_01();
 
             //new Eight_01();
+
+            new Fifteenth_01();
+            new Fifteenth_02();
 
             new Nineteenth_01();
         }
